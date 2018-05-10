@@ -233,8 +233,12 @@ io.sockets.on('connection', function(socket){ // when  a player connects this fu
     });
 
     socket.on("endTurn", function(){
-        var currentId = socket.id;
+	var currentId = socket.id;
 	var nextId = (currentId % activePlayers) + 1;
+	while (socket.falseaccusation == true)
+	{
+	nextId = (nextId % activePlayers) +1;
+	}
         console.log("ending turn on the server");
         console.log("currentId: ", currentId);
         console.log("nextId: ", nextId);
