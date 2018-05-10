@@ -285,7 +285,9 @@
 
 <!---notebook-------------------------------------------------------------------------------------------------------------------------------->
         <div id="notebook">
+            <button id="endTurnButton" type="button" onclick="sendEndTurn()">End Turn</button> 
             <button type="button" onclick="turnSuggestion()">Make A Suggestion</button>  <!---TEMP BUTTON-->
+            <button id="moveButton" type="button" onclick="TODO()">Move</button> 
             <table class="notebookTable">
                 <tr><td colspan="2"><div class="notebookCategoryHeader">Character</div></td></tr>
                 <tr><td class="notebookLeftCol"><input type="text" class="notebookLabel" id="suspect1Label" disabled="" value="Colonel Mustard"></td><td><input type="text" class="notebookTextField" id="notebook_suspect1"></td></tr>
@@ -613,11 +615,6 @@
     }
 
  
-    
-    
-    
-    
-    
     //Weapon
     function setSuspectWeapon(weapon) { 
         document.getElementById('caseWeapon').value = weapon; 
@@ -651,4 +648,18 @@
      document.getElementById(id).style.zIndex = "7";
      document.getElementById(id).style.border = "3px solid #b21a1a";
     }
+
+    socket.on('toggleMoveButton',function(playerId){
+        // get html element and toggle it
+	var moveButton = document.getElementById("moveButton");
+        moveButton.disabled = !moveButton.disabled;
+        var endTurnButton = document.getElementById("endTurnButton");
+        endTurnButton.disabled = !endTurnButton.disabled;
+    });
+
+    function sendEndTurn() {
+        console.log("sending endTurn event");
+        socket.emit("endTurn");
+    };
+
 </script>

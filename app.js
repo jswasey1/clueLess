@@ -212,7 +212,7 @@ io.sockets.on('connection', function(socket){ // when  a player connects this fu
         Player.onConnect(socket);    // creates a new player depending on id
         socket.emit('signInResponse',{success:true});
     });
-   
+ 
     socket.on('disconnect',function(){
         delete SOCKET_LIST[socket.id];
         Player.onDisconnect;
@@ -230,6 +230,16 @@ io.sockets.on('connection', function(socket){ // when  a player connects this fu
             return;
         var res = eval(data);
         socket.emit('evalAnswer',res);     
+    });
+
+    socket.on("endTurn", function(){
+        var currentId = socket.id;
+	var nextId = (currentId % activePlayers) + 1;
+        console.log("ending turn on the server");
+        console.log("currentId: ", currentId);
+        console.log("nextId: ", nextId);
+	// TODO add logic for accusation/skipping turns
+        socket.emit("toggleMoveButton", currentId);
     });
     
     //////SUGESTION
