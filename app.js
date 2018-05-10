@@ -12,6 +12,7 @@ JS: 05/06/18
 -----------------------------------------------------------------------------------------------------------------------------------------*/
 
 //app.js
+
 var playerId = 0;
 var express = require('express');
 var app = express();
@@ -88,14 +89,42 @@ var caseFile=[], deck=[], playersCards = [player1Cards=[], player2Cards=[], play
 /*------------------------------------------------------------------------------------------------------------------------
 End: Deck / Cards
 ------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+Begining: Room / Gameboard
+
+JC: Work in progress 
+        - Navigating the gameboard with hardcoded values. Not great, but It'll work.
+		- Made a new gameboard to follow professor instructionsa
+
+-----------------------------------------------------------------------------------------------------------------------------------------*/
+// var gameboardRooms = ["Study", "Hall", "Lounge", "Library", "Billiards", "Dining", "Conservatory", "Ballroom", "Kitchen"]
+// var gameboardHallways = ["StudyToHall", "HallToLounge", "LoungeToDining", "DiningToKitchen",
+						 // "KitchenToBallroom", "BallroomToConservatory", "ConservatoryToLibrary", 
+						 // "LibraryToStudy", "BilliardsToLibrary", "BilliardsToHall", "BilliardsToDining",
+						 // "BilliardsToBallroom", "SPConservatoryToLounge", "SPKitchenToStudy"]
+
+// var coordinateSystem = function(gameboardRooms, gameboardHallways){
+		// gameboardRooms.Study = (0,0);
+		// gameboardHallways.StudyToHall (5,0)
+		// gameboardRooms.Hall = (10,0);
+		// gameboardRooms.Lounge = (10,0);
+ // }
+
+/*------------------------------------------------------------------------------------------------------------------------
+End: Rooms/Hallways/Movement
+------------------------------------------------------------------------------------------------------------------------*/
+
     
 var Player = function(id){
     var self = {
-        x:250,
-        y:250,
+        x:25,
+        y:25,
         spdX:0,
         spdY:0,
         id:id,
+		// location: [25, 25],
         cardsInHand: getCards(id),
         number:"" + Math.floor(10 * Math.random()),  
         pressingRight:false,
@@ -118,19 +147,24 @@ var Player = function(id){
         super_update();
     }
 
+	self.getLocation = function(){
+		location = [self.x,self.y];
+		return location;
+	}
+	
     self.updateSpd = function(){
-        if(self.pressingRight)
-            self.spdX = self.maxSpd;
-        else if(self.pressingLeft)
-            self.spdX = -self.maxSpd;
-        else
+        // if(self.pressingRight)
+            // self.spdX = self.maxSpd;
+        // else if(self.pressingLeft)
+            // self.spdX = -self.maxSpd;
+        // else
             self.spdX = 0;
        
-        if(self.pressingUp)
-            self.spdY = -self.maxSpd;
-        else if(self.pressingDown)
-            self.spdY = self.maxSpd;
-        else
+        // if(self.pressingUp)
+            // self.spdY = -self.maxSpd;
+        // else if(self.pressingDown)
+            // self.spdY = self.maxSpd;
+        // else
             self.spdY = 0;     
     }
    //send to player
@@ -139,6 +173,7 @@ var Player = function(id){
             id:self.id,
             x:self.x,
             y:self.y,
+			// location:[self.x, self.y],
             number:self.number,
             cardsInHand:self.cardsInHand, 
         };     
@@ -239,7 +274,11 @@ io.sockets.on('connection', function(socket){ // when  a player connects this fu
     
     socket.on('suggestResponse',function(data){  
         SOCKET_LIST[data.playerSuggesting].emit('suggestResponseCard',{playerSuggesting:data.playerSuggesting, playerResponding:data.playerResponding, cardToShow:data.cardsSubmitted});
-    });   
+    });
+
+	socket.on('move', function(data){
+		SOCKET_LIST[data.playerResponding].emit('askSuggestion',{playerSuggesting:data.playerSuggesting, playerResponding:data.playerResponding, cardsSubmitted:data.cardsSubmitted});
+    });
 });
 
 var initPack = {player:[]};
