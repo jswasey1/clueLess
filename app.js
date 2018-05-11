@@ -119,12 +119,11 @@ End: Rooms/Hallways/Movement
     
 var Player = function(id){
     var self = {
-        x:25,
+        x:47,
         y:25,
         spdX:0,
         spdY:0,
         id:id,
-		// location: [25, 25],
         cardsInHand: getCards(id),
         number:"" + Math.floor(10 * Math.random()),  
         pressingRight:false,
@@ -135,16 +134,12 @@ var Player = function(id){
     }
 
     self.update = function(){
+		self.updateSpd();
         self.updatePosition();
     }
     self.updatePosition = function(){
         self.x += self.spdX;
         self.y += self.spdY;
-    }
-    var super_update = self.update;
-    self.update = function(){
-        self.updateSpd();
-        super_update();
     }
 
 	self.getLocation = function(){
@@ -153,19 +148,8 @@ var Player = function(id){
 	}
 	
     self.updateSpd = function(){
-        // if(self.pressingRight)
-            // self.spdX = self.maxSpd;
-        // else if(self.pressingLeft)
-            // self.spdX = -self.maxSpd;
-        // else
-            self.spdX = 0;
-       
-        // if(self.pressingUp)
-            // self.spdY = -self.maxSpd;
-        // else if(self.pressingDown)
-            // self.spdY = self.maxSpd;
-        // else
-            self.spdY = 0;     
+		self.spdX = 0;
+		self.spdY = 0;     
     }
    //send to player
     self.getInitPack = function(){
@@ -173,7 +157,6 @@ var Player = function(id){
             id:self.id,
             x:self.x,
             y:self.y,
-			// location:[self.x, self.y],
             number:self.number,
             cardsInHand:self.cardsInHand, 
         };     
@@ -235,6 +218,16 @@ Player.update = function(){
     return pack;
 }
 
+Player.move = function(data){
+    var pack = [];
+	var player = Player.list[data.playerId];
+	player.x = data.x;
+	player.y = data.y;
+	pack.push(player.getUpdatePack());
+    return pack;
+}
+
+
 var DEBUG = true;
 
 var io = require('socket.io')(serv,{});
@@ -276,8 +269,16 @@ io.sockets.on('connection', function(socket){ // when  a player connects this fu
         SOCKET_LIST[data.playerSuggesting].emit('suggestResponseCard',{playerSuggesting:data.playerSuggesting, playerResponding:data.playerResponding, cardToShow:data.cardsSubmitted});
     });
 
-	socket.on('move', function(data){
-		SOCKET_LIST[data.playerResponding].emit('askSuggestion',{playerSuggesting:data.playerSuggesting, playerResponding:data.playerResponding, cardsSubmitted:data.cardsSubmitted});
+	
+	//////Move
+	socket.on('updatePosition', function(data){
+		var pack = {
+			player:Player.move(data),
+		}
+		for (var i in SOCKET_LIST){
+			var socket = SOCKET_LIST[i];
+			socket.emit('updatePosition',pack);
+		}		
     });
 });
 
@@ -293,6 +294,7 @@ setInterval(function(){
 		var socket = SOCKET_LIST[i];
 		socket.emit('init',initPack);
 		socket.emit('update',pack);
+		socket.emit('updatePosition',pack);
 		socket.emit('remove',removePack);
 	}
 	initPack.player = []; 

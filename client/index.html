@@ -10,16 +10,10 @@
     /*****************************************************************************************************************************************
     * Notebook
     *****************************************************************************************************************************************/
-    #notebook {
-        background:#eddba8;
-        height:600px;
-        width:350px;
-        position:fixed;
-        top: 1%;
-        left: 810px;
-        padding: 0px;
-        margin: 0px;
-    }
+	#notebook { background:#eddba8; height:664px; width:320px; position:fixed; top: 1%; left: 885px; padding: 0px; margin: 0px; }
+
+    .notifications{ height:40px; width:875px; background-color: black; border:1px solid #000000; } 
+	 
     .notebookTable {
         border: 1px solid #dedede;
         background-color: #fff;	
@@ -228,7 +222,7 @@
 
 <!---Game----------------------------------------------------------------------------------------------------------------------------------->
        <div id="gameDiv" style="display:none;">
-	   <canvas id="ctx" width="700" height="700" style="border:1px solid #000000;"></canvas>
+	   <canvas id="ctx" width="875" height="620" style="border:1px solid #000000;"></canvas>
 	   
 <!---Movement----------------------------------------------------------------------------------------------------------------------------------->
 	<div class="gameboardMovementDiv" id="gameboardMovementDiv" style="display:none; on">  	
@@ -241,33 +235,31 @@
 						<img src="/client/img/Movement/Study.png" ><br>Study 
 					</label>
 				</td>
-				<td><label id="Hall" class="navigation" style="display:none;" onclick="selectMove('Hall')"><input type="radio" name="location" height="100" width="100" id="HallRB" style="display:none;" label="Hall"/><img src="/client/img/Movement/Hall.png" height="150" width="150"><br>Study</label></td>
-				<td><label id="Lounge" class="navigation" style="display:none;" onclick="selectMove('Lounge')"><input type="radio" name="location" height="100" width="100" id="LoungeRB" style="display:none;" label="Lounge"/><img src="/client/img/Movement/Hall.png" height="150" width="150"><br>Hall </label></td>
-				<td><label id="Library" class="navigation" style="display:none;" onclick="selectMove('Library')"><input type="radio" name="location" height="100" width="100" id="LibraryRB" style="display:none;" label="Library"/><img src="/client/img/Movement/Library.png" height="150" width="150"><br>Library </label></td>
-				<td><label id="Billiards" class="navigation" style="display:none;" onclick="selectMove('Billiards')"><input type="radio" name="location" height="100" width="100" id="BilliardsRB" style="display:none;" label="Billiards"/><img src="/client/img/Movement/Billiards.png" height="150" width="150"><br>Billiards </label></td>
-				<td><label id="Dining" class="navigation" style="display:none;" onclick="selectMove('Dining')"><input type="radio" name="location" height="100" width="100" id="DiningRB" style="display:none;" label="Dining"/><img src="/client/img/Movement/Dining.png" height="150" width="150"><br>Dining </label></td>
-				<td><label id="Conservatory" class="navigation" style="display:none;" onclick="selectMove('Conservatory')"><input type="radio" name="location" height="100" width="100" id="ConservatoryRB" style="display:none;" label="Conservatory"/><img src="/client/img/Movement/Conservatory.png" height="150" width="150"><br>Conservatory </label></td>
-				<td><label id="Ballroom" class="navigation" style="display:none;" onclick="selectMove('Ballroom')"><input type="radio" name="location" height="100" width="100" id="BallroomRB" style="display:none;" label="Ballroom"/><img src="/client/img/Movement/Ballroom.png" height="150" width="150"><br>Ballroom </label></td>
-				<td><label id="Kitchen" class="navigation" style="display:none;" onclick="selectMove('Kitchen')"><input type="radio" name="location" height="100" width="100" id="KitchenRB" style="display:none;" label="Kitchen"/><img src="/client/img/Movement/Kitchen.png" height="150" width="150"><br>Kitchen </label></td>
-				
-				<td><label id="StudyToHall" class="navigation" style="display:none;" onclick="selectMove('StudyToHall')"><input type="radio" name="location" height="100" width="100" id="studyToHallRB" style="display:none;" label="Study"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Study and Hall </label></td>
-				<td><label id="HallToLounge" class="navigation" style="display:none;" onclick="selectMove('HallToLounge')"><input type="radio" name="location" height="100" width="100" id="HallToLoungeRB" style="display:none;" label="Study"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Lounge and Hall </label></td>
+				<td><label id="Hall" class="navigation" style="display:none;" onclick="selectMove('Hall')"><input type="radio" name="location" height="100" width="100" id="HallRB" style="display:none;" label="Hall"/><img src="/client/img/Movement/Hall.png" height="300" width="300"><br>Study</label></td>
+				<td><label id="Lounge" class="navigation" style="display:none;" onclick="selectMove('Lounge')"><input type="radio" name="location" height="100" width="100" id="LoungeRB" style="display:none;" label="Lounge"/><img src="/client/img/Movement/Hall.png" height="300" width="300"><br>Hall </label></td>
+				<td><label id="Library" class="navigation" style="display:none;" onclick="selectMove('Library')"><input type="radio" name="location" height="100" width="100" id="LibraryRB" style="display:none;" label="Library"/><img src="/client/img/Movement/Library.png" height="300" width="300"><br>Library </label></td>
+				<td><label id="Billiards" class="navigation" style="display:none;" onclick="selectMove('Billiards')"><input type="radio" name="location" height="100" width="100" id="BilliardsRB" style="display:none;" label="Billiards"/><img src="/client/img/Movement/Billiards.png" height="300" width="300"><br>Billiards </label></td>
+				<td><label id="Dining" class="navigation" style="display:none;" onclick="selectMove('Dining')"><input type="radio" name="location" height="100" width="100" id="DiningRB" style="display:none;" label="Dining"/><img src="/client/img/Movement/Dining.png" height="300" width="300"><br>Dining </label></td>
+				<td><label id="Conservatory" class="navigation" style="display:none;" onclick="selectMove('Conservatory')"><input type="radio" name="location" height="100" width="100" id="ConservatoryRB" style="display:none;" label="Conservatory"/><img src="/client/img/Movement/Conservatory.png" height="300" width="300"><br>Conservatory </label></td>
+				<td><label id="Ballroom" class="navigation" style="display:none;" onclick="selectMove('Ballroom')"><input type="radio" name="location" height="100" width="100" id="BallroomRB" style="display:none;" label="Ballroom"/><img src="/client/img/Movement/Ballroom.png" height="300" width="300"><br>Ballroom </label></td>
+				<td><label id="Kitchen" class="navigation" style="display:none;" onclick="selectMove('Kitchen')"><input type="radio" name="location" height="100" width="100" id="KitchenRB" style="display:none;" label="Kitchen"/><img src="/client/img/Movement/Kitchen.png" height="300" width="300"><br>Kitchen </label></td>
+				<td><label id="StudyToHall" class="navigation" style="display:none;" onclick="selectMove('StudyToHall')"><input type="radio" name="location" height="100" width="100" id="studyToHallRB" style="display:none;" label="Study"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Study and Hall </label></td>
+				<td><label id="HallToLounge" class="navigation" style="display:none;" onclick="selectMove('HallToLounge')"><input type="radio" name="location" height="100" width="100" id="HallToLoungeRB" style="display:none;" label="Study"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Lounge and Hall </label></td>
 				<td><label id="StudyToLibrary" class="navigation" style="display:none;" onclick="selectMove('StudyToLibrary')"><input type="radio" name="location" height="100" width="100" id="StudyToLibraryRB" style="display:none;" label="StudyToLibrary"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Study and Library </label></td>				
-				<td><label id="HallToBilliards" class="navigation" style="display:none;" onclick="selectMove('HallToBilliards')"><input type="radio" name="location" height="100" width="100" id="HallToBilliardsRB" style="display:none;" label="HallToBilliards"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Hall and Billiards</label></td>
-				<td><label id="LoungeToDining" class="navigation" style="display:none;" onclick="selectMove('LoungeToDining')"><input type="radio" name="location" height="100" width="100" id="LoungeToDiningRB" style="display:none;" label="LoungeToDining"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Lounge and Dining</label></td>
-				<td><label id="LibraryToBilliards" class="navigation" style="display:none;" onclick="selectMove('LibraryToBilliards')"><input type="radio" name="location" height="100" width="100" id="LibraryToBilliardsRB" style="display:none;" label="LibraryToBilliards"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Library to Billiards</label></td>
-				<td><label id="BilliardsToDining" class="navigation" style="display:none;" onclick="selectMove('BilliardsToDining')"><input type="radio" name="location" height="100" width="100" id="BilliardsToDiningRB" style="display:none;" label="BilliardsToDining"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Billiards and Dining</label></td>
-				<td><label id="LibraryToConservatory" class="navigation" style="display:none;" onclick="selectMove('LibraryToConservatory')"><input type="radio" name="location" height="100" width="100" id="LibraryToConservatoryRB" style="display:none;" label="LibraryToConservatory"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Library and Conservatory</label></td>
-				<td><label id="BilliardsToBallroom" class="navigation" style="display:none;" onclick="selectMove('BilliardsToBallroom')"><input type="radio" name="location" height="100" width="100" id="BilliardsToBallroomRB" style="display:none;" label="BilliardsToBallroom"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Billiards and Ballroom</label></td>
-				<td><label id="DiningToKitchen" class="navigation" style="display:none;" onclick="selectMove('DiningToKitchen')"><input type="radio" name="location" height="100" width="100" id="DiningToKitchen" style="display:none;" label="DiningToKitchen"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Dining and Kitchen</label></td>
-				<td><label id="ConservatoryToBallroom" class="navigation" style="display:none;" onclick="selectMove('ConservatoryToBallroom')"><input type="radio" name="location" height="100" width="100" id="ConservatoryToBallroom" style="display:none;" label="ConservatoryToBallroom"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Conservatory and Ballroom</label></td>
-				<td><label id="BallroomToKitchen" class="navigation" style="display:none;" onclick="selectMove('BallroomToKitchen')"><input type="radio" name="location" height="100" width="100" id="BallroomToKitchen" style="display:none;" label="BallroomToKitchen"/><img src="/client/img/Movement/Hallway.png" height="150" width="150"><br>Hallway Between Ballroom and Kitchen</label></td>
+				<td><label id="HallToBilliards" class="navigation" style="display:none;" onclick="selectMove('HallToBilliards')"><input type="radio" name="location" height="100" width="100" id="HallToBilliardsRB" style="display:none;" label="HallToBilliards"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Hall and Billiards</label></td>
+				<td><label id="LoungeToDining" class="navigation" style="display:none;" onclick="selectMove('LoungeToDining')"><input type="radio" name="location" height="100" width="100" id="LoungeToDiningRB" style="display:none;" label="LoungeToDining"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Lounge and Dining</label></td>
+				<td><label id="LibraryToBilliards" class="navigation" style="display:none;" onclick="selectMove('LibraryToBilliards')"><input type="radio" name="location" height="100" width="100" id="LibraryToBilliardsRB" style="display:none;" label="LibraryToBilliards"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Library to Billiards</label></td>
+				<td><label id="BilliardsToDining" class="navigation" style="display:none;" onclick="selectMove('BilliardsToDining')"><input type="radio" name="location" height="100" width="100" id="BilliardsToDiningRB" style="display:none;" label="BilliardsToDining"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Billiards and Dining</label></td>
+				<td><label id="LibraryToConservatory" class="navigation" style="display:none;" onclick="selectMove('LibraryToConservatory')"><input type="radio" name="location" height="100" width="100" id="LibraryToConservatoryRB" style="display:none;" label="LibraryToConservatory"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Library and Conservatory</label></td>
+				<td><label id="BilliardsToBallroom" class="navigation" style="display:none;" onclick="selectMove('BilliardsToBallroom')"><input type="radio" name="location" height="100" width="100" id="BilliardsToBallroomRB" style="display:none;" label="BilliardsToBallroom"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Billiards and Ballroom</label></td>
+				<td><label id="DiningToKitchen" class="navigation" style="display:none;" onclick="selectMove('DiningToKitchen')"><input type="radio" name="location" height="100" width="100" id="DiningToKitchen" style="display:none;" label="DiningToKitchen"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Dining and Kitchen</label></td>
+				<td><label id="ConservatoryToBallroom" class="navigation" style="display:none;" onclick="selectMove('ConservatoryToBallroom')"><input type="radio" name="location" height="100" width="100" id="ConservatoryToBallroom" style="display:none;" label="ConservatoryToBallroom"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Conservatory and Ballroom</label></td>
+				<td><label id="BallroomToKitchen" class="navigation" style="display:none;" onclick="selectMove('BallroomToKitchen')"><input type="radio" name="location" height="100" width="100" id="BallroomToKitchen" style="display:none;" label="BallroomToKitchen"/><img src="/client/img/Movement/Hallway.png" height="300" width="300"><br>Hallway Between Ballroom and Kitchen</label></td>
 				<td><label id="spConservatoryToLounge" class="navigation" style="display:none;" onclick="selectMove('spConservatoryToLounge')"><input type="radio" name="location" height="100" width="100" id="spConservatoryToLounge" style="display:none;" label="spConservatoryToLounge"/><img src="/client/img/Movement/SecretPassage.png" height="300" width="300"><br>Secret Passage Between Conservatory and Lounge</label></td>
 				<td><label id="spKitchenToStudy" class="navigation" style="display:none;" onclick="selectMove('spKitchenToStudy')"><input type="radio" name="location" height="100" width="100" id="spKitchenToStudyRB" style="display:none;" label="spKitchenToStudy"/><img src="/client/img/Movement/SecretPassage.png" height="300" width="300"><br>Secret Passage Between Kitchen and Study</label></td>
 				<td><label id="stay" class="navigation" style="display:none;" onclick="selectMove('stay')"><input type="radio" name="location" height="100" width="100" id="stay" style="display:none;" label="stay"/><img src="/client/img/Movement/CantMove.png" height="300" width="300"><br>Stay in Current Position</label></td>
 			</tr>
 		</table> 
-		<button type="button" onclick="move()">Move</button>
 	</div>   
 
 <!---Suggestion------------------------------------------------------------------------------------------------------------------------------>
@@ -388,8 +380,8 @@
 
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script>
-    var WIDTH = 700;
-    var HEIGHT = 700;
+    var WIDTH = 875;
+    var HEIGHT = 620;
     var socket = io(); //initalizes 
 
     //sign
@@ -460,11 +452,10 @@
         self.x = initPack.x;
         self.y = initPack.y;
 		self.currLocation = [initPack.x, initPack.y];
-		//window.alert(self.cardsInHand);
 
 		self.draw = function(){
-			var x = self.x - Player.list[selfId].x + WIDTH/2;
-			var y = self.y - Player.list[selfId].y + HEIGHT/2;
+			var x = self.x;
+			var y = self.y;
 
 			switch(self.id) {
 				case 1: 
@@ -541,6 +532,21 @@
         }
     });
 
+	/*
+        send every frame and only contains the difference
+     */	
+    socket.on('updatePosition',function(data){
+        for(var i = 0 ; i < data.player.length; i++){
+            var pack = data.player[i];
+            var p = Player.list[pack.id];
+            if(p.id == data.id){
+                if(pack.x !== undefined)
+                        p.x = pack.x;
+                if(pack.y !== undefined)
+                        p.y = pack.y;
+            }
+        }
+    });
 
     /*
         send id when removed
@@ -561,7 +567,7 @@
     },40);
 
     var drawGameBoard = function(){
-        ctx.drawImage(Img.gameBoard,0,0,HEIGHT, WIDTH);
+        ctx.drawImage(Img.gameBoard,0,0,WIDTH, HEIGHT);
     }
 
     var drawCards = function(){ 
@@ -614,7 +620,6 @@
        
     });
     
-
     function displayProveSuggestion(caseCardsSuggested){      
         document.getElementById("ctx").style.display = "none";
 		document.getElementById("proveSuggestionDiv").style.display = "block";
@@ -723,148 +728,194 @@
 ************************************************************************************************************************/
 	
 	
-	function move() { 
-		document.getElementById("gameboardMovementDiv").style.display = "none";
-		document.getElementById("ctx").style.display = "block";	
-        
-        socket.emit('suggest',{playerSuggesting: selfId, playerResponding: playerResponding, movementSelected: movementSelected}); // send suggestion to server
-    }
+	<!-- function makeMove(desiredLocation) {  -->
+		<!-- document.getElementById("gameboardMovementDiv").style.display = "none"; -->
+		<!-- document.getElementById("ctx").style.display = "block"; -->
+		<!-- confirm("Entered makeMove(), desiredLocation = " + desiredLocation); -->
+        <!-- var str = desiredLocation.toString(); -->
+		<!-- var coordinates = str.split(","); -->
+		<!-- confirm("Coordinates = " + coordinates);  -->
+		<!-- var xCoord = coordinates[0]; -->
+		<!-- var yCoord = coordinates[1]; -->
+		<!-- confirm ("Coordinates = " + coordinates + ", xCoord = " + xCoord + ", yCoord" + yCoord); -->
+        <!-- socket.emit('updatePosition',{playerId:selfId, x:xCoord, y:yCoord}); // send move to server -->
+    <!-- } -->
+	
+	function getLocation(){
+		return Player.list[selfId].currLocation;
+	}
 	
 	//Room 
-	var Room = function(){
-		var self = {};
-		self.roomId = "";
-		self.roomOccupied = "false";
+	function getRoom(currLocation) //Can be passed currLocation value of "Player.list[selfId].currLocation"
+	{
+		confirm("Entered func getRoom with param" + currLocation);
+		var loc = currLocation;
+		var roomId = "";
 		
-		function setRoomOccupied(bool){
-				self.roomOccupied = bool;
-			}
-			
-		function checkRoomOccupied(){
-			return self.roomOccupied;
-		}
+		if (loc == "47,25")
+		{ roomId = "Study"; }
+		else if (loc == "271,57")
+		{ roomId = "StudyToHall"; }
+		else if (loc == "364,57")
+		{ roomId = "Hall"; }	
+		else if (loc == "524,71")
+		{ roomId = "HallToLounge"; }
+		else if (loc == "619,40")
+		{ roomId = "Lounge"; }
+		else if (loc == "114,131")
+		{ roomId = "StudyToLibrary"; }
+		else if (loc == "391,168")
+		{ roomId = "HallToBilliards"; }
+		else if (loc == "625,162")
+		{ roomId = "LoungeToDining"; }
+		else if (loc == "87,238")
+		{ roomId = "Library"; }
+		else if (loc == "263,285")
+		{ roomId = "LibraryToBilliards"; }
+		else if (loc == "361,229")
+		{ roomId = "Billiards"; }
+		else if (loc == "494,253")
+		{ roomId = "BilliardsToDining"; }
+		else if (loc == "597,247")
+		{ roomId = "Dining"; }
+		else if (loc == "112,352")
+		{ roomId = "LibraryToConservatory"; }
+		else if (loc == "370,351")
+		{ roomId = "BilliardsToBallroom"; }
+		else if (loc == "670,381")
+		{ roomId = "DiningToKitchen"; }
+		else if (loc == "70,474")
+		{ roomId = "Conservatory"; }
+		else if (loc == "243,469")
+		{ roomId = "ConservatoryToBallroom"; }
+		else if (loc == "334,418")
+		{ roomId = "Ballroom"; }
+		else if (loc == "563,449")
+		{ roomId = "BallroomToKitchen"; }
+		else if (loc == "678,461")
+		{ roomId = "Kitchen"; }
+		else
+		{ confirm("getRoom() -  Error: Coordinates (" + loc + ") indicate not in a room");}
 		
-		//Can be passed currLocation value of "Player.list[selfId].currLocation"
-		function setRoom(currLocation) {
-			confirm("Entered func setRoom with param" + currLocation);
-			var loc = currLocation;
-			
-			if (loc == "25,25")
-			{ self.roomId = "Study"; self.setRoomOccupied(true);}
-			else if (loc == ",")
-			{ self.roomId = "StudyToHall"; }
-			else if (loc == ",")
-			{ self.roomId = "Hall"; }	
-			else if (loc == ",")
-			{ self.roomId = "HallToLounge"; }
-			else if (loc == ",")
-			{ self.roomId = "Lounge"; }
-			else if (loc == ",")
-			{ self.roomId = "StudyToLibrary"; }
-			else if (loc == ",")
-			{ self.roomId = "HallToBilliards"; }
-			else if (loc == ",")
-			{ self.roomId = "LoungeToDining"; }
-			else if (loc == ",")
-			{ self.roomId = "Library"; }
-			else if (loc == ",")
-			{ self.roomId = "LibraryToBilliards"; }
-			else if (loc == ",")
-			{ self.roomId = "Billiards"; }
-			else if (loc == ",")
-			{ self.roomId = "BilliardsToDining"; }
-			else if (loc == ",")
-			{ self.roomId = "Dining"; }
-			else if (loc == ",")
-			{ self.roomId = "LibraryToConservatory"; }
-			else if (loc == ",")
-			{ self.roomId = "BilliardsToBallroom"; }
-			else if (loc == ",")
-			{ self.roomId = "DiningToKitchen"; }
-			else if (loc == ",")
-			{ self.roomId = "Conservatory"; }
-			else if (loc == ",")
-			{ self.roomId = "ConservatoryToBallroom"; }
-			else if (loc == ",")
-			{ self.roomId = "Ballroom"; }
-			else if (loc == ",")
-			{ self.roomId = "BallroomToKitchen"; }
-			else if (loc == ",")
-			{ self.roomId = "Kitchen"; }
-			else
-			{ confirm("getRoom() -  Error: Coordinates (" + loc + ") indicate not in a room");}
-			
-			confirm("You are in room " + self.roomId + ",setting to occupied = " + self.checkRoomOccupied);
-			return self.roomId;
-		}
-	
-		function getRoom(){
-			return self.roomId;
-		}
-		
-		return self;
+		confirm("You are in room " + roomId);
+		return roomId;
 	}
+	
+	//Room 
+	function getCoordinates(room) 
+	{
+		confirm("Entered func getRoom with param" + currLocation);
+		var coords = "";
+		
+		if (room == "Study")
+		{ coords = "47,25"; }
+		else if (room == "StudyToHall")
+		{ coords = "271,57"; }
+		else if (room == "Hall")
+		{ coords = "364,57"; }
+		else if (room == "HallToLounge")
+		{ coords = "524,71"; }
+		else if (room == "Lounge")
+		{ coords = "619,40"; }
+		else if (room == "StudyToLibrary")
+		{ coords = "114,131"; }
+		else if (room == "HallToBilliards")
+		{ coords = "391,168"; }
+		else if (room == "LoungeToDining")
+		{ coords = "625,162"; }
+		else if (room == "Library")
+		{ coords = "87,238"; }
+		else if (room == "LibraryToBilliards")
+		{ coords = "263,285"; }
+		else if (room == "Billiards")
+		{ coords = "361,229"; }
+		else if (room == "BilliardsToDining")
+		{ coords = "494,253"; }
+		else if (room == "Dining")
+		{ coords = "597,247"; }
+		else if (room == "LibraryToConservatory")
+		{ coords = "112,352"; }
+		else if (room == "BilliardsToBallroom")
+		{ coords = "370,351"; }
+		else if (room == "DiningToKitchen")
+		{ coords = "670,381"; }
+		else if (room == "Conservatory")
+		{ coords = "70,474"; }
+		else if (room == "ConservatoryToBallroom")
+		{ coords = "243,469"; }
+		else if (room == "Ballroom")
+		{ coords = "334,418"; }
+		else if (room == "BallroomToKitchen")
+		{ coords = "563,449"; }
+		else if (room == "Kitchen")
+		{ coords = "678,461"; }
+		else if (room == "spConservatoryToLounge")
+		{ 
+			if (Player.list[selfId].currLocation == "70,474") // in Conservatory
+			{
+				coords = "619,40"; //Place you in Lounge
+			} 
+			else //You are in Lounge
+			{
+				coords = "70,474"; //Place you in Conservatory
+			}
+		}
+		else if (room == "spKitchenToStudy")
+		{ 
+			if (Player.list[selfId].currLocation == "678,461") // in Kitchen
+			{
+				coords = "47,25"; //Place you in Study
+			} 
+			else //You are in Study
+			{
+				coords = "678,461"; //Place you in Kitchen
+			}
+		}
+		else
+		{ confirm("getCoordinates() -  Error: Room " + room + " indicate not in a valid coordinate location");}
+		
+		confirm("You are at (" + coords + ")");
+		return roomId;
+	}
+	
 		
 	function showPossibleMoves(currLocation) {
 		confirm("*TEMP* You Entered showPossibleMoves");
-		var room = Room.setRoom(currLocation);
+		var room = getRoom(currLocation);
 		confirm ("showPossibleMoves() - room set to " + room);
-		var occupiedRooms = checkRoomOccupied(room);
+		<!-- var occupied = checkRoomOccupied(room); -->
 		confirm("*TEMP* Populated currRoom with " + room);
 		
 		//Highlight Selected Option and Tag zIndex as "Selected"
 		<!-- document.getElementById(id).style.zIndex = "7"; -->
 		if (room == "Study") //In Room "Study"
 		{
-			document.getElementById("StudyToHall").style.display=""
-			document.getElementById("StudyToLibrary").style.display=""
-			document.getElementById("spKitchenToStudy").style.display=""
-			document.getElementById("stay").style.display=""
+			document.getElementById("StudyToHall").style.display="";
+			document.getElementById("StudyToLibrary").style.display="";
+			document.getElementById("spKitchenToStudy").style.display="";
+			document.getElementById("stay").style.display="";
 			
-			<!-- if (document.getElementById("studyToHall").style.zIndex === "7") -->
-			<!-- { -->
-				<!-- document.getElementById("weapon1").style.zIndex = "1";  -->
-				<!-- document.getElementById("weapon1").style.border = "none"; -->
-			<!-- } -->
 		}
-		
-			
+		<!-- insert Jenns Code here -->
 
-			
-			<!-- if (document.getElementById("studyToHall").style.zIndex === "7") -->
-			<!-- { -->
-				<!-- document.getElementById("weapon1").style.zIndex = "1";  -->
-				<!-- document.getElementById("weapon1").style.border = "none"; -->
-			<!-- } -->
-			<!-- else if(document.getElementById("studyToLibrary").style.zIndex === "7") -->
-			<!-- { -->
-			
-			<!-- } -->
-			<!-- else if(document.getElementById("spKitchenToStudy").style.zIndex === "7") -->
-			<!-- { -->
-			
-			<!-- } -->
-			<!-- else -->
-			<!-- { -->
-				<!-- //Forcing Player to Stay in Current Location -->
-				<!-- document.getElementById("stay").style.zIndex === "1" -->
-				<!-- document.getElementById("stay").style.border = "3px solid #b21a1a"; -->
-				
-			<!-- } -->
-		<!-- } -->
-		<!-- else if(Player.getLocation() == [100,25]) //In Hallway "StudyToHall" -->
-		<!-- { -->
-			<!-- //TODO: Fill in this portion: -->
-			<!-- //		1. Enable the html div element based on id (this is just the room name or hallway name. if unsure just leave a "???" -->
-			<!-- //		2. Set up if statement with the choices you enabled in step 1 -->
-			<!-- //		3. Dont worry about the coordinates too much. Im gonna mess with these numbers later -->
-		<!-- } -->
 	}
 	
 	function selectMove(id) {
 		document.getElementById(id).style.zIndex = "7";
 		document.getElementById(id).style.border = "3px solid #b21a1a";
-		confirm("*TEMP* You selected " + id);
+		confirm("Entered makeMove() You selected " + id + " as desired location");
+		var coords = getCoordinates(id); //Convert Room Name string to Coordinates
+        var str = coords.toString();
+		var coordinates = str.split(",");
+		confirm("Coordinates = " + coordinates); 
+		var xCoord = coordinates[0];
+		var yCoord = coordinates[1];
+		confirm ("Coordinates = " + coordinates + ", xCoord = " + xCoord + ", yCoord" + yCoord);
+		
+        socket.emit('updatePosition',{playerId:selfId, x:xCoord, y:yCoord}); // send move to server
+				
+		document.getElementById("gameboardMovementDiv").style.display = "none";
+		document.getElementById("ctx").style.display = "block";
 	}
 	
 	function turnMovement() {
