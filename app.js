@@ -99,8 +99,8 @@ Begining: Player
     
 var Player = function(id){
     var self = {
-        x:47,
-        y:25,
+        x:144,
+        y:72,
         spdX:0,
         spdY:0,
         id:id,

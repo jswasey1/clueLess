@@ -230,7 +230,7 @@
 		  <tr><th>Movement Options</th></tr>
 			<tr>
 				<td>
-					<label id="Study" class="navigation" style="display:none;" onclick="selectMove('study')">
+					<label id="Study" class="navigation" style="display:none;" onclick="selectMove('Study')">
 						<input type="radio" name="location" height="100" width="100" id="studyRB" style="display:none;" label="Study"/>
 						<img src="/client/img/Movement/Study.png" ><br>Study 
 					</label>
@@ -752,47 +752,47 @@
 		var loc = currLocation;
 		var roomId = "";
 		
-		if (loc == "47,25")
+		if (loc == "144,72")
 		{ roomId = "Study"; }
-		else if (loc == "271,57")
+		else if (loc == "303,107")
 		{ roomId = "StudyToHall"; }
-		else if (loc == "364,57")
-		{ roomId = "Hall"; }	
-		else if (loc == "524,71")
+		else if (loc == "432,111")
+		{ roomId = "Hall"; }
+		else if (loc == "557,106")
 		{ roomId = "HallToLounge"; }
-		else if (loc == "619,40")
+		else if (loc == "709,91")
 		{ roomId = "Lounge"; }
-		else if (loc == "114,131")
+		else if (loc == "162,178")
 		{ roomId = "StudyToLibrary"; }
-		else if (loc == "391,168")
+		else if (loc == "426,195")
 		{ roomId = "HallToBilliards"; }
-		else if (loc == "625,162")
+		else if (loc == "683,193")
 		{ roomId = "LoungeToDining"; }
-		else if (loc == "87,238")
+		else if (loc == "162,287")
 		{ roomId = "Library"; }
-		else if (loc == "263,285")
+		else if (loc == "299,287")
 		{ roomId = "LibraryToBilliards"; }
-		else if (loc == "361,229")
+		else if (loc == "415,285")
 		{ roomId = "Billiards"; }
-		else if (loc == "494,253")
+		else if (loc == "534,295")
 		{ roomId = "BilliardsToDining"; }
-		else if (loc == "597,247")
+		else if (loc == "699,296")
 		{ roomId = "Dining"; }
-		else if (loc == "112,352")
+		else if (loc == "163,397")
 		{ roomId = "LibraryToConservatory"; }
-		else if (loc == "370,351")
+		else if (loc == "414,377")
 		{ roomId = "BilliardsToBallroom"; }
-		else if (loc == "670,381")
+		else if (loc == "718,405")
 		{ roomId = "DiningToKitchen"; }
-		else if (loc == "70,474")
+		else if (loc == "145,519")
 		{ roomId = "Conservatory"; }
-		else if (loc == "243,469")
+		else if (loc == "274,504")
 		{ roomId = "ConservatoryToBallroom"; }
-		else if (loc == "334,418")
+		else if (loc == "437,474")
 		{ roomId = "Ballroom"; }
-		else if (loc == "563,449")
+		else if (loc == "593,494")
 		{ roomId = "BallroomToKitchen"; }
-		else if (loc == "678,461")
+		else if (loc == "743,506")
 		{ roomId = "Kitchen"; }
 		else
 		{ confirm("getRoom() -  Error: Coordinates (" + loc + ") indicate not in a room");}
@@ -808,67 +808,67 @@
 		var coords = "";
 		
 		if (room == "Study")
-		{ coords = "47,25"; }
+		{ coords = "144,72"; }
 		else if (room == "StudyToHall")
-		{ coords = "271,57"; }
+		{ coords = "303,107"; }
 		else if (room == "Hall")
-		{ coords = "364,57"; }
+		{ coords = "432,111"; }
 		else if (room == "HallToLounge")
-		{ coords = "524,71"; }
+		{ coords = "557,106"; }
 		else if (room == "Lounge")
-		{ coords = "619,40"; }
+		{ coords = "709,91"; }
 		else if (room == "StudyToLibrary")
-		{ coords = "114,131"; }
+		{ coords = "162,178"; }
 		else if (room == "HallToBilliards")
-		{ coords = "391,168"; }
+		{ coords = "426,195"; }
 		else if (room == "LoungeToDining")
-		{ coords = "625,162"; }
+		{ coords = "683,193"; }
 		else if (room == "Library")
-		{ coords = "87,238"; }
+		{ coords = "162,287"; }
 		else if (room == "LibraryToBilliards")
-		{ coords = "263,285"; }
+		{ coords = "299,287"; }
 		else if (room == "Billiards")
-		{ coords = "361,229"; }
+		{ coords = "415,285"; }
 		else if (room == "BilliardsToDining")
-		{ coords = "494,253"; }
+		{ coords = "534,295"; }
 		else if (room == "Dining")
-		{ coords = "597,247"; }
+		{ coords = "699,296"; }
 		else if (room == "LibraryToConservatory")
-		{ coords = "112,352"; }
+		{ coords = "163,397"; }
 		else if (room == "BilliardsToBallroom")
-		{ coords = "370,351"; }
+		{ coords = "414,377"; }
 		else if (room == "DiningToKitchen")
-		{ coords = "670,381"; }
+		{ coords = "718,405"; }
 		else if (room == "Conservatory")
-		{ coords = "70,474"; }
+		{ coords = "145,519"; }
 		else if (room == "ConservatoryToBallroom")
-		{ coords = "243,469"; }
+		{ coords = "274,504"; }
 		else if (room == "Ballroom")
-		{ coords = "334,418"; }
+		{ coords = "437,474"; }
 		else if (room == "BallroomToKitchen")
-		{ coords = "563,449"; }
+		{ coords = "593,494"; }
 		else if (room == "Kitchen")
-		{ coords = "678,461"; }
+		{ coords = "743,506"; }
 		else if (room == "spConservatoryToLounge")
 		{ 
-			if (Player.list[selfId].currLocation == "70,474") // in Conservatory
+			if (Player.list[selfId].currLocation == "145,519") // in Conservatory
 			{
-				coords = "619,40"; //Place you in Lounge
+				coords = "709,91"; //Place you in Lounge
 			} 
 			else //You are in Lounge
 			{
-				coords = "70,474"; //Place you in Conservatory
+				coords = "145,519"; //Place you in Conservatory
 			}
 		}
 		else if (room == "spKitchenToStudy")
 		{ 
-			if (Player.list[selfId].currLocation == "678,461") // in Kitchen
+			if (Player.list[selfId].currLocation == "743,506") // in Kitchen
 			{
-				coords = "47,25"; //Place you in Study
+				coords = "144,72"; //Place you in Study
 			} 
 			else //You are in Study
 			{
-				coords = "678,461"; //Place you in Kitchen
+				coords = "743,506"; //Place you in Kitchen
 			}
 		}
 		else
