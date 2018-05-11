@@ -1,0 +1,20 @@
+I've compiled a list of existing bugs from my testing. They have a categorization next to them of the severity/type of bug
+
+
+Navigation
+-----------
+1. Fix bug with the move options. When selecting, it only highlights the text of the room selection. - COSMETIC
+2. Fix Move options. This is currently a one-shot deal. If you select a room. it Goes to said room. Maybe add a button
+   to ask if the player is sure. - MINOR NON_FUNCTIONAL
+3. Potential issue (untested): The room coordinates MAY need to change. - MAJOR FUNCTIONAL ISSUE
+4. If a Movement fails (this has only occured in testing), the whole game freezes up. It does not allow new players to connect
+   nor does it allow the user to do anything. The app.js has to be restarted. - MAJOR FUNCTIONAL ISSUE
+
+Players
+----------
+1. Spawning players is an issue. They All automatically spawn to the x and y coordinates in the app.js Player.self declaration 
+   - MAJOR FUNCTIONAL
+2. Players NOT appearing is an issue. They show up on some views, but not all - MAJOR FUNCTIONAL
+3. Players disappearing behind board after moving - MINOR FUNCTIONAL
+4. If players are located in the same room, they just stack ontop of one another. Difficult to display. - COSMETIC
+

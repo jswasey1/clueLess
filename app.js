@@ -91,31 +91,11 @@ End: Deck / Cards
 ------------------------------------------------------------------------------------------------------------------------*/
 
 
+
+
 /*------------------------------------------------------------------------------------------------------------------------------------------
-Begining: Room / Gameboard
-
-JC: Work in progress 
-        - Navigating the gameboard with hardcoded values. Not great, but It'll work.
-		- Made a new gameboard to follow professor instructionsa
-
+Begining: Player
 -----------------------------------------------------------------------------------------------------------------------------------------*/
-// var gameboardRooms = ["Study", "Hall", "Lounge", "Library", "Billiards", "Dining", "Conservatory", "Ballroom", "Kitchen"]
-// var gameboardHallways = ["StudyToHall", "HallToLounge", "LoungeToDining", "DiningToKitchen",
-						 // "KitchenToBallroom", "BallroomToConservatory", "ConservatoryToLibrary", 
-						 // "LibraryToStudy", "BilliardsToLibrary", "BilliardsToHall", "BilliardsToDining",
-						 // "BilliardsToBallroom", "SPConservatoryToLounge", "SPKitchenToStudy"]
-
-// var coordinateSystem = function(gameboardRooms, gameboardHallways){
-		// gameboardRooms.Study = (0,0);
-		// gameboardHallways.StudyToHall (5,0)
-		// gameboardRooms.Hall = (10,0);
-		// gameboardRooms.Lounge = (10,0);
- // }
-
-/*------------------------------------------------------------------------------------------------------------------------
-End: Rooms/Hallways/Movement
-------------------------------------------------------------------------------------------------------------------------*/
-
     
 var Player = function(id){
     var self = {
@@ -226,12 +206,15 @@ Player.move = function(data){
 	pack.push(player.getUpdatePack());
     return pack;
 }
+/*------------------------------------------------------------------------------------------------------------------------
+End: Player
+------------------------------------------------------------------------------------------------------------------------*/
 
 
 var DEBUG = true;
 
 var io = require('socket.io')(serv,{});
-io.sockets.on('connection', function(socket){ // when  a player connects this function is called
+io.sockets.on('connection', function(socket){ // when a player connects this function is called
     playerId += 1;
     socket.id = playerId;
     SOCKET_LIST[socket.id] = socket;
